@@ -8,16 +8,16 @@
 
 const EMAILJS_CONFIG = {
   // Reemplaza con tu Service ID de EmailJS (ej: 'service_abc123')
-  serviceID: 'service_toxwr7j',
+  serviceID: 'service_xb9c5h7',
 
   // Reemplaza con tu Template ID de EmailJS (ej: 'template_xyz789')
-  templateID: 'template_e17k6gi',
+  templateID: 'template_6nfm73t',
 
   // Reemplaza con tu Public Key de EmailJS (ej: 'user_abcdef123456')
-  publicKey: 'LeDpi2sk_feso3Coi',
+  publicKey: 'TEI_844mk5zG2aGmk',
 
   // Email de destino donde llegan las PQRS (cambiar por tu email real)
-  destinationEmail: 'crisnegocios25@gmail.com'
+  destinationEmail: 'asociacionasoreanc@gmail.com'
 };
 
 // TEMPLATE PARA EMAILJS - Copia esto exactamente:

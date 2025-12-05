@@ -24,12 +24,12 @@
       
       <!-- Navegación desktop -->
       <nav class="hidden lg:flex space-x-6 text-lg">
-        <a href="Index.html" class="text-green-700 hover:text-blue-600 font-medium transition-all duration-300 border-b-2 border-green-700">Inicio</a>
+        <a href="index.html" class="text-green-700 hover:text-blue-600 font-medium transition-all duration-300 hover:border-b-2 hover:border-blue-600">Inicio</a>
         <a href="nosotros.html" class="text-green-700 hover:text-blue-600 font-medium transition-all duration-300 hover:border-b-2 hover:border-blue-600">Quiénes Somos</a>
         <a href="servicios.html" class="text-green-700 hover:text-blue-600 font-medium transition-all duration-300 hover:border-b-2 hover:border-blue-600">Servicios</a>
         <a href="docs.html" class="text-green-700 hover:text-blue-600 font-medium transition-all duration-300 hover:border-b-2 hover:border-blue-600">Documentos</a>
         <a href="equipo.html" class="text-green-700 hover:text-blue-600 font-medium transition-all duration-300 hover:border-b-2 hover:border-blue-600">Equipo</a>
-        <a href="noticias.html" class="text-green-700 hover:text-blue-600 font-medium transition-all duration-300 hover:border-b-2 hover:border-blue-600">Noticias</a>
+        <a href="noticias.html" class="text-green-700 hover:text-blue-600 font-medium transition-all duration-300 border-b-2 border-green-700">Noticias</a>
         <a href="pqrs.html" class="bg-green-700 text-white px-4 py-2 rounded-full hover:bg-green-800 transition-all duration-300 btn-eco">PQRS</a>
       </nav>
 
@@ -42,61 +42,87 @@
     </div>
 
     <!-- Menú móvil -->
-    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 bg-white shadow-2xl lg:hidden z-50">
-      <div class="p-6">
-        <div class="flex justify-between items-center mb-8">
-          <div class="flex items-center space-x-3">
-            <img src="imagenes/logo.png" alt="Logo" class="w-10 h-10">
-            <h2 class="text-xl font-bold text-green-700">ASOREANC</h2>
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 bg-white shadow-2xl lg:hidden z-50" style="background-color: #ffffff !important; background: #ffffff !important;">
+      <div class="p-6" style="background-color: #ffffff !important; background: #ffffff !important;">
+        <!-- Header elegante de la sidebar -->
+        <div class="sidebar-header">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center space-x-3">
+              <div class="logo-container">
+                <img src="imagenes/logo.png" alt="ASOREANC" class="w-8 h-8">
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-800 text-lg">ASOREANC</h3>
+                <p class="text-xs text-green-600 font-medium">Reciclaje Sostenible</p>
+              </div>
+            </div>
+            <button id="close-mobile-menu" class="close-button">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
           </div>
-          <button id="close-mobile-menu" class="text-gray-500 hover:text-gray-700">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
+          
+          <!-- Separador decorativo -->
+          <div class="separator"></div>
         </div>
         <nav class="space-y-4">
-          <a href="Index.html" class="block text-green-700 hover:text-blue-600 font-medium py-3 px-4 rounded-lg hover:bg-green-50 transition-all">Inicio</a>
-          <a href="nosotros.html" class="block text-green-700 hover:text-blue-600 font-medium py-3 px-4 rounded-lg hover:bg-green-50 transition-all">Quiénes Somos</a>
-          <a href="servicios.html" class="block text-green-700 hover:text-blue-600 font-medium py-3 px-4 rounded-lg hover:bg-green-50 transition-all">Servicios</a>
-          <a href="docs.html" class="block text-green-700 hover:text-blue-600 font-medium py-3 px-4 rounded-lg hover:bg-green-50 transition-all">Documentos</a>
-          <a href="equipo.html" class="block text-green-700 hover:text-blue-600 font-medium py-3 px-4 rounded-lg hover:bg-green-50 transition-all">Nuestro Equipo</a>
-          <a href="noticias.html" class="block text-green-700 hover:text-blue-600 font-medium py-3 px-4 rounded-lg hover:bg-green-50 transition-all">Noticias</a>
-          <a href="pqrs.html" class="block bg-green-700 text-white font-medium py-3 px-4 rounded-lg hover:bg-green-800 transition-all text-center">PQRS</a>
+          <a href="index.html" class="sidebar-link">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+            <span>Inicio</span>
+          </a>
+          <a href="nosotros.html" class="sidebar-link">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            <span>Quiénes Somos</span>
+          </a>
+          <a href="servicios.html" class="sidebar-link">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+            <span>Servicios</span>
+          </a>
+          <a href="docs.html" class="sidebar-link">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            <span>Documentos</span>
+          </a>
+          <a href="equipo.html" class="sidebar-link">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+            </svg>
+            <span>Nuestro Equipo</span>
+          </a>
+          <a href="noticias.html" class="sidebar-link active">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+            </svg>
+            <span>Noticias</span>
+          </a>
+          <a href="pqrs.html" class="sidebar-link pqrs-button">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+            <span>PQRS</span>
+          </a>
         </nav>
+
+
       </div>
     </div>
+
+    <!-- Overlay para el menú móvil -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
   </header>
 
-  <!-- Menú móvil -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-md shadow-lg">
-    <div class="px-6 py-4 space-y-3">
-      <a href="Index.html" class="block text-green-700 hover:text-blue-600 font-medium">Inicio</a>
-      <a href="nosotros.html" class="block text-green-700 hover:text-blue-600 font-medium">Quiénes Somos</a>
-      <a href="servicios.html" class="block text-green-700 hover:text-blue-600 font-medium">Servicios</a>
-      <a href="docs.html" class="block text-green-700 hover:text-blue-600 font-medium">Documentos</a>
-      <a href="equipo.html" class="block text-green-700 hover:text-blue-600 font-medium">Nuestro Equipo</a>
-      <a href="noticias.html" class="block text-green-700 hover:text-blue-600 font-medium">Noticias</a>
-      <a href="pqrs.html" class="block text-green-700 hover:text-blue-600 font-medium">PQRS</a>
-    </div>
-  </div>
+
 
   <!-- Hero Section Noticias -->
-  <section class="relative pt-32 pb-16 bg-white">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <div class="animate-fadeInUp mb-16">
-        
-        <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight text-gray-800">
-          <span class="block">Noticias y</span>
-          <span class="block text-emerald-500">Actualidad</span>
-        </h1>
-        
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Mantente informado sobre nuestros logros, proyectos innovadores y el impacto positivo que estamos generando 
-          en las comunidades y el medio ambiente.
-        </p>
-      </div>
-    </div>
+  <section class="relative pt-5 pb-1 bg-white">
   </section>
 
   <!-- Sección de Noticias Destacadas -->
@@ -104,7 +130,7 @@
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 animate-on-scroll">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-          Historias de <span class="text-blue-500">Impacto</span>
+          Historias de <span class="text-emerald-500">Impacto</span>
         </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
           Descubre cómo estamos transformando vidas y comunidades a través del reciclaje sostenible
@@ -472,11 +498,7 @@
     }
   });
 
-  // Menú móvil
-  function toggleMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden');
-  }
+  // Menú móvil manejado por script.js
 </script>
 
   <script src="script.js"></script>
@@ -529,7 +551,7 @@
         <div>
           <h4 class="text-lg font-semibold mb-4 text-green-200">Enlaces Rápidos</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="Index.html" class="text-green-100 hover:text-white transition-colors">Inicio</a></li>
+            <li><a href="index.html" class="text-green-100 hover:text-white transition-colors">Inicio</a></li>
             <li><a href="nosotros.html" class="text-green-100 hover:text-white transition-colors">Quiénes Somos</a></li>
             <li><a href="servicios.html" class="text-green-100 hover:text-white transition-colors">Servicios</a></li>
             <li><a href="docs.html" class="text-green-100 hover:text-white transition-colors">Documentos</a></li>
@@ -545,11 +567,11 @@
           <div class="space-y-3 text-sm">
             <div class="flex items-center space-x-2">
               <span class="text-green-300">📧</span>
-              <span class="text-green-100">contacto@asoreanc.org</span>
+              <span class="text-green-100">asociacionasoreanc@gmail.com</span>
             </div>
             <div class="flex items-center space-x-2">
               <span class="text-green-300">📱</span>
-              <span class="text-green-100">+57 301 123 4567</span>
+              <span class="text-green-100">+573142404418</span>
             </div>
             <div class="flex items-center space-x-2">
               <span class="text-green-300">📍</span>

@@ -53,32 +53,120 @@ function initSlideshow() {
   setInterval(nextSlide, 5000);
 }
 
+// Función eliminada - ya no es necesaria con el nuevo sistema
+
 // Menú móvil
 function initMobileMenu() {
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
   const closeMobileMenu = document.getElementById('close-mobile-menu');
 
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
+  function openMenu() {
+    if (mobileMenu) {
+      mobileMenu.classList.remove('hidden');
       mobileMenu.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
+      // Forzar estilos para la sidebar - asegurar que esté por encima de todo y ocupe toda la altura
+      mobileMenu.style.backgroundColor = '#ffffff';
+      mobileMenu.style.background = '#ffffff';
+      mobileMenu.style.filter = 'none !important';
+      mobileMenu.style.webkitFilter = 'none !important';
+      mobileMenu.style.zIndex = '10000';
+      mobileMenu.style.opacity = '1';
+      mobileMenu.style.position = 'fixed';
+      mobileMenu.style.top = '0';
+      mobileMenu.style.bottom = '0';
+      mobileMenu.style.height = '100vh';
+      mobileMenu.style.minHeight = '100vh';
+      
+      // Forzar que todos los elementos hijos tampoco tengan blur
+      const allElements = mobileMenu.querySelectorAll('*');
+      allElements.forEach(element => {
+        element.style.filter = 'none';
+        element.style.webkitFilter = 'none';
+      });
+      
+      // Función para mantener la sidebar sin efectos
+      const keepSidebarClear = () => {
+        if (mobileMenu && mobileMenu.classList.contains('open')) {
+          mobileMenu.style.filter = 'none !important';
+          mobileMenu.style.webkitFilter = 'none !important';
+          mobileMenu.style.opacity = '1 !important';
+          mobileMenu.style.zIndex = '10000';
+          mobileMenu.style.backgroundColor = '#ffffff';
+          
+          allElements.forEach(element => {
+            element.style.filter = 'none !important';
+            element.style.webkitFilter = 'none !important';
+            element.style.opacity = '1';
+          });
+          requestAnimationFrame(keepSidebarClear);
+        }
+      };
+      keepSidebarClear();
+    }
+    
+    // Agregar clase al body para efectos adicionales
+    document.body.classList.add('menu-open');
+    document.body.style.overflow = 'hidden';
+    
+    // Mostrar overlay con efecto de oscurecimiento
+    if (mobileMenuOverlay) {
+      mobileMenuOverlay.classList.add('show');
+      // Forzar la opacidad inmediatamente
+      setTimeout(() => {
+        mobileMenuOverlay.style.opacity = '1';
+      }, 50);
+    }
+    
+    console.log('Menu opened - body class added:', document.body.classList.contains('menu-open'));
+  }
+
+  function closeMenu() {
+    // Remover efectos del body primero
+    document.body.classList.remove('menu-open');
+    document.body.style.overflow = 'auto';
+    
+    // Remover efectos del overlay
+    if (mobileMenuOverlay) {
+      mobileMenuOverlay.classList.remove('show');
+      mobileMenuOverlay.style.opacity = '0';
+    }
+    
+    // Cerrar sidebar
+    if (mobileMenu) {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('open');
+    }
+    
+    console.log('Menu closed - body class removed:', !document.body.classList.contains('menu-open'));
+  }
+
+  // Función global para toggle (para compatibilidad con archivos existentes)
+  window.toggleMobileMenu = function() {
+    if (mobileMenu && mobileMenu.classList.contains('hidden')) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  };
+
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', openMenu);
 
     if (closeMobileMenu) {
-      closeMobileMenu.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = 'auto';
-      });
+      closeMobileMenu.addEventListener('click', closeMenu);
+    }
+
+    // Cerrar menú al hacer click en el overlay
+    if (mobileMenuOverlay) {
+      mobileMenuOverlay.addEventListener('click', closeMenu);
     }
 
     // Cerrar menú al hacer click en un enlace
     const mobileLinks = mobileMenu.querySelectorAll('a');
     mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = 'auto';
-      });
+      link.addEventListener('click', closeMenu);
     });
   }
 }
